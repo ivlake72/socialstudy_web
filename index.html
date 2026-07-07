@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>백두산 화산재난 정보</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
   <div class="emergency-shell">
@@ -40,6 +41,34 @@
     </header>
 
     <main class="main-content">
+      <section class="map-shell">
+        <div class="map-panel">
+          <div class="map-header">
+            <p class="eyebrow">대피 장소</p>
+            <h2>가까운 대피소 지도</h2>
+          </div>
+          <div id="evacuation-map" class="map-frame"></div>
+        </div>
+
+        <div class="map-info">
+          <article class="map-card">
+            <h3>대피소 A</h3>
+            <p>은평구청 야외광장 - 임시 대피소</p>
+            <p class="map-detail">거리: 1.1km · 도보 14분</p>
+          </article>
+          <article class="map-card">
+            <h3>대피소 B</h3>
+            <p>은평문화예술회관 체육관 - 식수 및 침구 제공</p>
+            <p class="map-detail">거리: 1.8km · 셔틀 운행</p>
+          </article>
+          <article class="map-card">
+            <h3>대피소 C</h3>
+            <p>연신내역 공영주차장 인근 - 구조 지원 거점</p>
+            <p class="map-detail">거리: 2.4km · 버스 및 지하철 접근</p>
+          </article>
+        </div>
+      </section>
+
       <section class="notice-box" role="alert">
         <div>
           <p class="notice-label">긴급 공지</p>
@@ -159,6 +188,34 @@
           </div>
         </article>
       </section>
+
+      <section class="map-shell">
+        <div class="map-panel">
+          <div class="map-header">
+            <p class="eyebrow">대피 장소</p>
+            <h2>가까운 대피소 지도</h2>
+          </div>
+          <div id="evacuation-map" class="map-frame"></div>
+        </div>
+
+        <div class="map-info">
+          <article class="map-card">
+            <h3>대피소 A</h3>
+            <p>은평구청 야외광장 - 임시 대피소</p>
+            <p class="map-detail">거리: 1.1km · 도보 14분</p>
+          </article>
+          <article class="map-card">
+            <h3>대피소 B</h3>
+            <p>은평문화예술회관 체육관 - 식수 및 침구 제공</p>
+            <p class="map-detail">거리: 1.8km · 셔틀 운행</p>
+          </article>
+          <article class="map-card">
+            <h3>대피소 C</h3>
+            <p>연신내역 공영주차장 인근 - 구조 지원 거점</p>
+            <p class="map-detail">거리: 2.4km · 버스 및 지하철 접근</p>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -166,6 +223,7 @@
     </footer>
   </div>
 
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

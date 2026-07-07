@@ -95,6 +95,48 @@ if (slideNext) {
   slideNext.addEventListener('click', goToNextSlide);
 }
 
+function initEvacuationMap() {
+  if (typeof L === 'undefined') return;
+
+  const map = L.map('evacuation-map', {
+    center: [37.6021, 126.9220],
+    zoom: 13,
+    zoomControl: false,
+    dragging: true,
+    scrollWheelZoom: false,
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 18,
+  }).addTo(map);
+
+  const shelters = [
+    {
+      title: '대피소 A',
+      description: '은평구청 야외광장 - 임시 대피소',
+      coords: [37.6028, 126.9207],
+    },
+    {
+      title: '대피소 B',
+      description: '은평문화예술회관 체육관 - 식수 및 침구 제공',
+      coords: [37.5995, 126.9303],
+    },
+    {
+      title: '대피소 C',
+      description: '연신내역 공영주차장 인근 - 구조 지원 거점',
+      coords: [37.6102, 126.9229],
+    },
+  ];
+
+  shelters.forEach((shelter) => {
+    L.marker(shelter.coords)
+      .addTo(map)
+      .bindPopup(`<strong>${shelter.title}</strong><br>${shelter.description}`);
+  });
+}
+
 updateCurrentTime();
 setInterval(updateCurrentTime, 1000);
 initTheme();
+initEvacuationMap();

@@ -127,11 +127,40 @@ img {
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1.35fr 0.85fr;
+  grid-template-columns: 1.35fr 1.1fr;
   gap: 1.5rem;
   align-items: stretch;
   position: relative;
   z-index: 1;
+}
+
+.hero-side {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-map-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  padding: 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(8, 14, 24, 0.88));
+  min-height: 360px;
+}
+
+.hero-map-panel .map-header {
+  margin-bottom: 1rem;
+}
+
+.hero-map-panel .map-header h2 {
+  margin: 0.35rem 0 0;
+}
+
+.map-frame {
+  width: 100%;
+  min-height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0b1828;
 }
 
 .hero-copy {
@@ -282,6 +311,13 @@ img {
   margin: 0;
   max-width: 640px;
   color: var(--muted);
+}
+
+.slide-map-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.2rem;
+  align-items: start;
 }
 
 .slide-shell {
@@ -507,6 +543,7 @@ img {
 
 @media (max-width: 900px) {
   .hero-content,
+  .slide-map-layout,
   .info-grid,
   .detail-grid {
     grid-template-columns: 1fr;
@@ -577,14 +614,63 @@ img {
   margin-bottom: 1rem;
 }
 
-.map-placeholder {
-  background: var(--surface-alt);
-  border: 2px dashed rgba(148, 163, 184, 0.7);
-  border-radius: 18px;
-  min-height: 200px;
+.map-shell {
   display: grid;
-  place-items: center;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.map-panel {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 1.35rem;
+  background: rgba(8, 14, 24, 0.85);
+}
+
+.map-header {
+  margin-bottom: 1rem;
+}
+
+.map-header h2 {
+  margin: 0.35rem 0 0;
+}
+
+.map-frame {
+  width: 100%;
+  min-height: 320px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0b1828;
+}
+
+.map-info {
+  display: grid;
+  gap: 1rem;
+}
+
+.map-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 1.1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.14);
+}
+
+.map-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+.map-card p {
+  margin: 0;
   color: var(--muted);
+  line-height: 1.6;
+}
+
+.map-detail {
+  margin-top: 0.8rem;
+  color: #dbeafe;
   font-weight: 700;
 }
 
