@@ -1,6 +1,6 @@
 :root {
-  --bg: #06070d;
-  --surface: #0e1420;
+  --bg: #000000;
+  --surface: #080b12;
   --surface-alt: #131b2e;
   --text: #f3f4f6;
   --muted: #9aa4b2;
@@ -25,9 +25,6 @@ body {
 
 body {
   line-height: 1.6;
-  background: radial-gradient(circle at top left, rgba(91, 124, 255, 0.18), transparent 24%),
-    radial-gradient(circle at 85% 10%, rgba(255, 59, 48, 0.2), transparent 20%),
-    var(--bg);
 }
 
 a {
@@ -55,10 +52,9 @@ img {
   align-items: center;
   gap: 1rem;
   padding: 1.2rem 1.3rem;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 59, 48, 0.24);
-  background: linear-gradient(90deg, rgba(255, 59, 48, 0.16), rgba(255, 255, 255, 0.04));
-  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid var(--danger);
+  background-color: #ff3a3025;
 }
 
 .notice-label {
@@ -88,8 +84,8 @@ img {
   gap: 1rem;
   margin-top: 1rem;
   padding: 1rem 1.2rem;
-  border-radius: 999px;
-  background: rgba(10, 18, 33, 0.82);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.625);
   border: 1px solid var(--border);
   backdrop-filter: blur(12px);
   position: sticky;
@@ -111,7 +107,7 @@ img {
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  border-radius: 999px;
+  border-radius: 10px;
   background: rgba(255, 59, 48, 0.18);
 }
 
@@ -123,7 +119,7 @@ img {
 
 .nav-link {
   padding: 0.6rem 0.9rem;
-  border-radius: 999px;
+  border-radius: 10px;
   color: var(--muted);
   font-size: 0.95rem;
   font-weight: 700;
@@ -133,14 +129,14 @@ img {
 .nav-link:hover,
 .nav-link.active {
   color: white;
-  background: rgba(91, 124, 255, 0.16);
+  background-color: rgba(255, 255, 255, 0.045);
 }
 
 .theme-toggle {
   border: none;
   background: rgba(255, 255, 255, 0.1);
   color: var(--text);
-  border-radius: 999px;
+  border-radius: 10px;
   padding: 0.75rem 0.95rem;
   font-weight: 700;
   cursor: pointer;
@@ -157,8 +153,8 @@ img {
   grid-template-columns: 1.25fr 0.95fr;
   gap: 1.2rem;
   padding: 1.4rem;
-  border-radius: 28px;
-  background: linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(13, 22, 41, 0.96));
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.028);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
 }
@@ -196,14 +192,14 @@ img {
   align-items: center;
   justify-content: center;
   padding: 0.9rem 1.2rem;
-  border-radius: 999px;
+  border-radius: 10px;
   font-weight: 800;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  opacity: 0.8;
 }
 
 .btn-primary {
@@ -218,7 +214,7 @@ img {
 }
 
 .hero-status {
-  border-radius: 24px;
+  border-radius: 10px;
   padding: 1.2rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -227,7 +223,7 @@ img {
 .status-chip {
   display: inline-flex;
   padding: 0.4rem 0.8rem;
-  border-radius: 999px;
+  border-radius: 10px;
   background: rgba(255, 59, 48, 0.2);
   color: #ffd8d8;
   font-size: 0.78rem;
@@ -257,7 +253,7 @@ img {
   color: #eef3ff;
 }
 
-.status-list li + li {
+.status-list li+li {
   margin-top: 0.4rem;
 }
 
@@ -293,15 +289,15 @@ img {
 .page-section,
 .slide-shell,
 .map-panel {
-  border-radius: 24px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 18, 33, 0.88);
+  background-color: rgba(255, 255, 255, 0.045);
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.16);
 }
 
 .products-section {
   padding: 1.4rem;
-  border-radius: 28px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: linear-gradient(135deg, rgba(10, 18, 33, 0.96), rgba(14, 24, 44, 0.92));
 }
@@ -319,21 +315,23 @@ img {
   font-size: 1.4rem;
 }
 
-.section-heading > p {
+.section-heading>p {
   margin: 0;
   color: var(--muted);
   max-width: 280px;
 }
 
+/* --- 상품 및 모달 관련 스타일 (중복 제거 완료) --- */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .product-card {
   overflow: hidden;
-  border-radius: 22px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
 }
@@ -370,16 +368,16 @@ img {
 .price {
   font-size: 1.05rem;
   font-weight: 800;
-  color: #ffd8a8;
+  color: white;
 }
 
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  display: none;
+  display: grid;
   place-items: center;
   padding: 1rem;
-  background: rgba(3, 7, 18, 0.72);
+  background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(6px);
   z-index: 50;
 }
@@ -388,8 +386,9 @@ img {
   position: relative;
   width: min(100%, 460px);
   padding: 1.3rem;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(10, 18, 33, 0.98), rgba(18, 25, 43, 0.95));
+  border-radius: 10px;
+  /* background: linear-gradient(135deg, rgba(10, 18, 33, 0.98), rgba(18, 25, 43, 0.95)); */
+  background: black;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
 }
@@ -403,7 +402,7 @@ img {
   color: white;
   width: 2rem;
   height: 2rem;
-  border-radius: 999px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -450,6 +449,7 @@ img {
   font-weight: 700;
   color: #ffd8a8;
 }
+/* ------------------------------------------- */
 
 body.modal-open {
   overflow: hidden;
@@ -461,9 +461,9 @@ body.modal-open {
   align-items: center;
   gap: 1rem;
   padding: 1.4rem;
-  border-radius: 28px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(13, 22, 41, 0.96));
+  background-color: rgba(255, 255, 255, 0.045);
 }
 
 .store-hero h1 {
@@ -484,7 +484,7 @@ body.modal-open {
   min-width: 320px;
 }
 
-.store-summary > div {
+.store-summary>div {
   padding: 0.9rem;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
@@ -500,133 +500,6 @@ body.modal-open {
   display: block;
   color: var(--muted);
   font-size: 0.9rem;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.product-card {
-  overflow: hidden;
-  border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.product-card img {
-  display: block;
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.product-body {
-  padding: 1rem;
-}
-
-.product-body h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.06rem;
-}
-
-.product-body p {
-  margin: 0 0 0.9rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.product-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-}
-
-.price {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: #ffd8a8;
-}
-
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  background: rgba(3, 7, 18, 0.72);
-  backdrop-filter: blur(6px);
-  z-index: 50;
-}
-
-.modal-card {
-  position: relative;
-  width: min(100%, 460px);
-  padding: 1.3rem;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(10, 18, 33, 0.98), rgba(18, 25, 43, 0.95));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
-}
-
-.modal-close {
-  position: absolute;
-  top: 0.85rem;
-  right: 0.85rem;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.checkout-summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.checkout-form {
-  display: grid;
-  gap: 0.85rem;
-  margin-top: 1rem;
-}
-
-.checkout-form label {
-  display: grid;
-  gap: 0.35rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.checkout-form input {
-  width: 100%;
-  padding: 0.8rem 0.9rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
-  color: white;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.success-card {
-  text-align: center;
-}
-
-.success-product {
-  margin: 0.6rem 0 1rem;
-  font-weight: 700;
-  color: #ffd8a8;
 }
 
 @media (max-width: 860px) {
@@ -704,7 +577,7 @@ body.modal-open {
   width: 2.8rem;
   height: 2.8rem;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.08);
   color: white;
   cursor: pointer;
@@ -724,14 +597,14 @@ body.modal-open {
 
 .slide-deck::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
+  border-radius: 10px;
 }
 
 .slide-card {
   min-width: 270px;
   flex: 0 0 40%;
   scroll-snap-align: start;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 1rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(91, 124, 255, 0.12));
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -740,7 +613,7 @@ body.modal-open {
 .slide-tag {
   display: inline-flex;
   padding: 0.38rem 0.7rem;
-  border-radius: 999px;
+  border-radius: 10px;
   background: rgba(59, 130, 246, 0.18);
   color: #bfdbfe;
   font-size: 0.78rem;
@@ -763,15 +636,30 @@ body.modal-open {
 .chip {
   display: inline-flex;
   padding: 0.35rem 0.65rem;
-  border-radius: 999px;
+  border-radius: 10px;
   font-size: 0.76rem;
   font-weight: 700;
 }
 
-.chip.warning { background: rgba(255, 59, 48, 0.18); color: #ffd5d1; }
-.chip.alert { background: rgba(255, 166, 0, 0.16); color: #ffd49d; }
-.chip.caution { background: rgba(251, 191, 36, 0.16); color: #fde68a; }
-.chip.info { background: rgba(59, 130, 246, 0.16); color: #bfdbfe; }
+.chip.warning {
+  background: rgba(255, 59, 48, 0.18);
+  color: #ffd5d1;
+}
+
+.chip.alert {
+  background: rgba(255, 166, 0, 0.16);
+  color: #ffd49d;
+}
+
+.chip.caution {
+  background: rgba(251, 191, 36, 0.16);
+  color: #fde68a;
+}
+
+.chip.info {
+  background: rgba(59, 130, 246, 0.16);
+  color: #bfdbfe;
+}
 
 .detail-list,
 .priority-list,
@@ -799,7 +687,7 @@ body.modal-open {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: 10px;
   background: rgba(91, 124, 255, 0.22);
   color: #dbeafe;
   font-weight: 800;
@@ -819,7 +707,7 @@ body.modal-open {
 .map-frame {
   width: 100%;
   min-height: 360px;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   background: #0b1828;
 }
@@ -859,7 +747,6 @@ body.modal-open {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
-    border-radius: 24px;
     padding: 1rem;
   }
 
@@ -897,4 +784,25 @@ body.modal-open {
   .slide-card {
     flex-basis: 80%;
   }
+}
+
+.buy-btn {
+  outline: 0;
+  border: 0;
+  background: var(--accent-strong);
+  cursor: pointer;
+}
+
+.modal-buy-btn {
+  border: 0;
+  cursor: pointer;
+}
+
+input {
+  outline: 0;
+  transition: border 0.2s;
+}
+
+input:focus {
+  border: 1px solid var(--accent-strong);
 }
