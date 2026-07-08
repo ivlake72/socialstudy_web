@@ -10,18 +10,6 @@
   --border: rgba(255, 255, 255, 0.08);
 }
 
-[data-theme="light"] {
-  --bg: #f4f6fb;
-  --surface: #ffffff;
-  --surface-alt: #eef2ff;
-  --text: #111827;
-  --muted: #526071;
-  --danger: #b91c1c;
-  --accent: #1d4ed8;
-  --accent-strong: #ea580c;
-  --border: #d2d9e4;
-}
-
 * {
   box-sizing: border-box;
 }
