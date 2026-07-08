@@ -36,28 +36,15 @@ function toggleTheme() {
   setTheme(currentTheme === 'dark' ? 'light' : 'dark');
 }
 
-const menuLinks = Array.from(document.querySelectorAll('.menu-link'));
-const panels = Array.from(document.querySelectorAll('.panel'));
-
-function activateSection(targetId) {
-  panels.forEach((panel) => {
-    panel.classList.toggle('active', panel.id === targetId);
-  });
-
-  menuLinks.forEach((link) => {
-    link.classList.toggle('active', link.dataset.target === targetId);
+function activateNav() {
+  const currentPage = document.body.dataset.page || 'home';
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    const href = link.getAttribute('href') || '';
+    const target = href.replace('.html', '');
+    const isActive = (currentPage === 'home' && target === 'index') || target === currentPage;
+    link.classList.toggle('active', isActive);
   });
 }
-
-menuLinks.forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    const targetId = link.dataset.target;
-    if (targetId) {
-      activateSection(targetId);
-    }
-  });
-});
 
 if (themeToggle) {
   themeToggle.addEventListener('click', toggleTheme);
@@ -96,7 +83,8 @@ if (slideNext) {
 }
 
 function initEvacuationMap() {
-  if (typeof L === 'undefined') return;
+  const mapEl = document.getElementById('evacuation-map');
+  if (!mapEl || typeof L === 'undefined') return;
 
   const map = L.map('evacuation-map', {
     center: [37.6021, 126.9220],
@@ -112,21 +100,9 @@ function initEvacuationMap() {
   }).addTo(map);
 
   const shelters = [
-    {
-      title: '대피소 A',
-      description: '은평구청 야외광장 - 임시 대피소',
-      coords: [37.6028, 126.9207],
-    },
-    {
-      title: '대피소 B',
-      description: '은평문화예술회관 체육관 - 식수 및 침구 제공',
-      coords: [37.5995, 126.9303],
-    },
-    {
-      title: '대피소 C',
-      description: '연신내역 공영주차장 인근 - 구조 지원 거점',
-      coords: [37.6102, 126.9229],
-    },
+    { title: '대피소 A', description: '은평구청 야외광장 - 임시 대피소', coords: [37.6028, 126.9207] },
+    { title: '대피소 B', description: '은평문화예술회관 체육관 - 식수 및 침구 제공', coords: [37.5995, 126.9303] },
+    { title: '대피소 C', description: '연신내역 공영주차장 인근 - 구조 지원 거점', coords: [37.6102, 126.9229] },
   ];
 
   shelters.forEach((shelter) => {
@@ -139,4 +115,5 @@ function initEvacuationMap() {
 updateCurrentTime();
 setInterval(updateCurrentTime, 1000);
 initTheme();
+activateNav();
 initEvacuationMap();

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>기상 영향</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="weather">
+  <div class="page-shell">
+    <section class="notice-box" role="alert">
+      <div>
+        <p class="notice-label">긴급 공지</p>
+        <h2>지금 즉시 행동이 필요합니다.</h2>
+      </div>
+      <p>대피소로 이동하고, 마스크 착용, 비상물품 준비, 이동 경로 확인을 우선적으로 진행하세요.</p>
+    </section>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🚨</span>
+        <span>재난안전상황실</span>
+      </a>
+      <nav class="top-nav" aria-label="주요 페이지">
+        <a class="nav-link" href="index.html">메인</a>
+        <a class="nav-link" href="shelters.html">가까운 대피장소</a>
+        <a class="nav-link" href="status.html">현재 상황</a>
+        <a class="nav-link" href="priority.html">대피 우선순위</a>
+        <a class="nav-link active" href="weather.html">기상 영향</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button">🌙</button>
+    </header>
+
+    <main class="main-content">
+      <section class="page-section">
+        <h2>기상 영향</h2>
+        <p>남동풍에 따라 화산재 이동 방향이 바뀔 수 있으므로, 최신 공지를 수시로 확인해야 합니다.</p>
+      </section>
+
+      <section class="weather-grid">
+        <article class="weather-card">
+          <h3>풍향</h3>
+          <p>현재 남동풍이 불고 있어 서쪽 방향으로 화산재가 이동할 가능성이 있습니다.</p>
+        </article>
+        <article class="weather-card">
+          <h3>강수</h3>
+          <p>강수 가능성이 낮아 미세 입자와 가스가 지상에 머물 가능성이 큽니다.</p>
+        </article>
+        <article class="weather-card">
+          <h3>권고</h3>
+          <p>외출을 자제하고, 실내 공기 질 관리와 환기 중단을 권고합니다.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>백두산 화산재난 정보 포털 | 제공: 재난안전관리본부</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

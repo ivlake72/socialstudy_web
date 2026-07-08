@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>가까운 대피장소</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body data-page="shelters">
+  <div class="page-shell">
+    <section class="notice-box" role="alert">
+      <div>
+        <p class="notice-label">긴급 공지</p>
+        <h2>지금 즉시 행동이 필요합니다.</h2>
+      </div>
+      <p>대피소로 이동하고, 마스크 착용, 비상물품 준비, 이동 경로 확인을 우선적으로 진행하세요.</p>
+    </section>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🚨</span>
+        <span>재난안전상황실</span>
+      </a>
+      <nav class="top-nav" aria-label="주요 페이지">
+        <a class="nav-link" href="index.html">메인</a>
+        <a class="nav-link active" href="shelters.html">가까운 대피장소</a>
+        <a class="nav-link" href="status.html">현재 상황</a>
+        <a class="nav-link" href="priority.html">대피 우선순위</a>
+        <a class="nav-link" href="weather.html">기상 영향</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button">🌙</button>
+    </header>
+
+    <main class="main-content">
+      <section class="map-shell">
+        <div class="map-panel">
+          <div class="map-header">
+            <p class="eyebrow">대피 장소</p>
+            <h2>가까운 대피소 지도</h2>
+          </div>
+          <div id="evacuation-map" class="map-frame"></div>
+        </div>
+        <div class="map-info">
+          <article class="map-card">
+            <h3>대피소 A</h3>
+            <p>은평구청 야외광장 - 임시 대피소</p>
+            <p class="map-detail">거리: 1.1km · 도보 14분</p>
+          </article>
+          <article class="map-card">
+            <h3>대피소 B</h3>
+            <p>은평문화예술회관 체육관 - 식수 및 침구 제공</p>
+            <p class="map-detail">거리: 1.8km · 셔틀 운행</p>
+          </article>
+          <article class="map-card">
+            <h3>대피소 C</h3>
+            <p>연신내역 공영주차장 인근 - 구조 지원 거점</p>
+            <p class="map-detail">거리: 2.4km · 버스 및 지하철 접근</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <h2>대피소 이용 안내</h2>
+        <ul>
+          <li>가장 가까운 대피소를 먼저 확인하고, 도보 이동이 어려운 경우 보호자와 함께 이동합니다.</li>
+          <li>대피소 내에는 식수, 구호물품, 응급처치 구역이 마련되어 있습니다.</li>
+          <li>이동 중에는 마스크를 착용하고 창문을 닫아 화산재 노출을 최소화합니다.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>백두산 화산재난 정보 포털 | 제공: 재난안전관리본부</p>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

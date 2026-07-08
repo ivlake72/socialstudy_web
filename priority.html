@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>대피 우선순위</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="priority">
+  <div class="page-shell">
+    <section class="notice-box" role="alert">
+      <div>
+        <p class="notice-label">긴급 공지</p>
+        <h2>지금 즉시 행동이 필요합니다.</h2>
+      </div>
+      <p>대피소로 이동하고, 마스크 착용, 비상물품 준비, 이동 경로 확인을 우선적으로 진행하세요.</p>
+    </section>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🚨</span>
+        <span>재난안전상황실</span>
+      </a>
+      <nav class="top-nav" aria-label="주요 페이지">
+        <a class="nav-link" href="index.html">메인</a>
+        <a class="nav-link" href="shelters.html">가까운 대피장소</a>
+        <a class="nav-link" href="status.html">현재 상황</a>
+        <a class="nav-link active" href="priority.html">대피 우선순위</a>
+        <a class="nav-link" href="weather.html">기상 영향</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button">🌙</button>
+    </header>
+
+    <main class="main-content">
+      <section class="page-section">
+        <h2>대피 우선순위</h2>
+        <p>이동이 어려운 시민과 고위험군부터 안전한 장소로 이동해야 합니다.</p>
+      </section>
+
+      <section class="detail-grid">
+        <article class="detail-card">
+          <h3>1단계</h3>
+          <div class="priority-list">
+            <div class="priority-item"><span class="priority-step">1</span><p>임산부, 노약자, 어린이, 장애인 우선 이동</p></div>
+            <div class="priority-item"><span class="priority-step">2</span><p>이동이 불편한 시민은 보호자와 함께 대피</p></div>
+          </div>
+        </article>
+        <article class="detail-card">
+          <h3>2단계</h3>
+          <div class="priority-list">
+            <div class="priority-item"><span class="priority-step">3</span><p>혼잡 구간을 피해 가장 가까운 대피소로 이동</p></div>
+            <div class="priority-item"><span class="priority-step">4</span><p>대피소 도착 후 안내요원 지시에 따라 배치</p></div>
+          </div>
+        </article>
+        <article class="detail-card">
+          <h3>3단계</h3>
+          <div class="priority-list">
+            <div class="priority-item"><span class="priority-step">5</span><p>가족과 연락하여 거주지별 인원 파악</p></div>
+            <div class="priority-item"><span class="priority-step">6</span><p>응급약, 식수, 휴대전화 충전 상태 확인</p></div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>백두산 화산재난 정보 포털 | 제공: 재난안전관리본부</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
