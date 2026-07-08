@@ -100,6 +100,89 @@ function initEvacuationMap() {
   });
 }
 
+function openModal(modal) {
+  if (!modal) return;
+  modal.hidden = false;
+  modal.style.display = 'grid';
+  document.body.classList.add('modal-open');
+}
+
+function closeModal(modal) {
+  if (!modal) return;
+  modal.hidden = true;
+  modal.style.display = 'none';
+  if (checkoutModal?.hidden && successModal?.hidden) {
+    document.body.classList.remove('modal-open');
+  }
+}
+
+const checkoutModal = document.getElementById('checkout-modal');
+const successModal = document.getElementById('success-modal');
+const checkoutProduct = document.getElementById('checkout-product');
+const checkoutPrice = document.getElementById('checkout-price');
+const successProduct = document.getElementById('success-product');
+const checkoutForm = document.getElementById('checkout-form');
+
+function bindModalEvents() {
+  document.querySelectorAll('.buy-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+      const selectedProduct = {
+        name: button.dataset.product || '비상용품',
+        price: Number(button.dataset.price || 0),
+      };
+
+      if (checkoutProduct) {
+        checkoutProduct.textContent = selectedProduct.name;
+      }
+
+      if (checkoutPrice) {
+        checkoutPrice.textContent = `₩${selectedProduct.price.toLocaleString()}`;
+      }
+
+      if (successProduct) {
+        successProduct.textContent = selectedProduct.name;
+      }
+
+      openModal(checkoutModal);
+    });
+  });
+
+  document.querySelectorAll('[data-close-modal]').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const target = button.getAttribute('data-close-modal');
+      if (target === 'checkout') {
+        closeModal(checkoutModal);
+      } else if (target === 'success') {
+        closeModal(successModal);
+      }
+    });
+  });
+
+  [checkoutModal, successModal].forEach((modal) => {
+    modal?.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeModal(checkoutModal);
+      closeModal(successModal);
+    }
+  });
+
+  checkoutForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    closeModal(checkoutModal);
+    openModal(successModal);
+    checkoutForm.reset();
+  });
+}
+
+bindModalEvents();
 updateCurrentTime();
 setInterval(updateCurrentTime, 1000);
 initTheme();

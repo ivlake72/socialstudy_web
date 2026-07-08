@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>비상용품 상점</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="store">
+  <div class="page-shell">
+    <section class="notice-box" role="alert">
+      <div>
+        <p class="notice-label">비상용품 안내</p>
+        <h2>지금 바로 준비할 수 있는 필수품을 확인하세요.</h2>
+      </div>
+      <p>실제 결제는 연결되지 않으며, 예시 결제 화면과 완료 모달을 확인하기 위한 페이지입니다.</p>
+    </section>
+
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">🚨</span>
+        <span>재난안전상황실</span>
+      </a>
+      <nav class="top-nav" aria-label="주요 페이지">
+        <a class="nav-link" href="index.html">메인</a>
+        <a class="nav-link" href="shelters.html">가까운 대피장소</a>
+        <a class="nav-link" href="status.html">현재 상황</a>
+        <a class="nav-link" href="priority.html">대피 우선순위</a>
+        <a class="nav-link" href="weather.html">기상 영향</a>
+        <a class="nav-link active" href="store.html">상점</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button">🌙</button>
+    </header>
+
+    <main class="main-content">
+      <section class="store-hero">
+        <div>
+          <p class="eyebrow">비상용품 상점</p>
+          <h1>당장 필요한 물품을 빠르게 준비하세요.</h1>
+          <p>화산재·정전·긴급 상황에 대비할 수 있는 기본 구성품을 확인하고 예시 결제를 진행해 보세요.</p>
+        </div>
+        <div class="store-summary">
+          <div>
+            <strong>3개</strong>
+            <span>추천 상품</span>
+          </div>
+          <div>
+            <strong>24시간</strong>
+            <span>빠른 배송</span>
+          </div>
+          <div>
+            <strong>안전</strong>
+            <span>재난 대응 키트</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-grid" aria-label="비상용품 상품 목록">
+        <article class="product-card">
+          <img src="https://plus.unsplash.com/premium_photo-1733317290607-6479869d275c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="비상식량 세트" />
+          <div class="product-body">
+            <h3>장기보관 비상식량 세트</h3>
+            <p>3일치 식사와 물 정수 키트를 포함한 실용 세트입니다.</p>
+            <div class="product-footer">
+              <span class="price">₩38,000</span>
+              <button class="btn btn-primary buy-btn" type="button" data-product="장기보관 비상식량 세트" data-price="38000">구매하기</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1624638760852-8ede1666ab07?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="응급처치 키트" />
+          <div class="product-body">
+            <h3>응급처치 키트</h3>
+            <p>붕대, 소독제, 마스크까지 한 번에 챙길 수 있는 키트입니다.</p>
+            <div class="product-footer">
+              <span class="price">₩24,500</span>
+              <button class="btn btn-primary buy-btn" type="button" data-product="응급처치 키트" data-price="24500">구매하기</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1580846841980-225e3e2832ae?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="손전등과 배터리 세트" />
+          <div class="product-body">
+            <h3>손전등 + 배터리 세트</h3>
+            <p>정전 시에도 안전하게 이동할 수 있는 기본 비상용품입니다.</p>
+            <div class="product-footer">
+              <span class="price">₩19,800</span>
+              <button class="btn btn-primary buy-btn" type="button" data-product="손전등 + 배터리 세트" data-price="19800">구매하기</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1771581133326-4b32949d8e5f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fCVFRCU5QyVCNCVFQiU4QyU4MCUyMCVFQiU5RCVCQyVFQiU5NCU5NCVFQyU5OCVBNHxlbnwwfHwwfHx8MA%3D%3D" alt="휴대용 라디오" />
+          <div class="product-body">
+            <h3>휴대용 라디오</h3>
+            <p>최대 156.8MHz를 지원하는 해상 및 항공 통신용 라디오</p>
+            <div class="product-footer">
+              <span class="price">₩67,700</span>
+              <button class="btn btn-primary buy-btn" type="button" data-product="휴대용 라디오" data-price="67700">구매하기</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>비상용품 상점 예시 페이지 | 제공: 재난안전상황실</p>
+    </footer>
+  </div>
+
+  <div class="modal-backdrop" id="checkout-modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button class="modal-close" type="button" aria-label="닫기" data-close-modal="checkout">✕</button>
+      <p class="eyebrow">결제 화면</p>
+      <h3 id="checkout-title">주문 확인</h3>
+      <div class="checkout-summary">
+        <span>상품명</span>
+        <strong id="checkout-product">-</strong>
+      </div>
+      <div class="checkout-summary">
+        <span>결제 금액</span>
+        <strong id="checkout-price">₩0</strong>
+      </div>
+      <form id="checkout-form" class="checkout-form">
+        <label>
+          이름
+          <input type="text" name="name" placeholder="홍길동" required />
+        </label>
+        <label>
+          연락처
+          <input type="tel" name="phone" placeholder="010-1234-5678" required />
+        </label>
+        <label>
+          배송 주소
+          <input type="text" name="address" placeholder="서울시 중구" required />
+        </label>
+        <button class="btn btn-primary full-width" type="submit">결제 완료</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="success-modal" hidden>
+    <div class="modal-card success-card" role="dialog" aria-modal="true" aria-labelledby="success-title">
+      <button class="modal-close" type="button" aria-label="닫기" data-close-modal="success">✕</button>
+      <p class="eyebrow">결제 완료</p>
+      <h3 id="success-title">주문이 접수되었습니다.</h3>
+      <p id="success-message">선택하신 상품의 결제가 완료되었습니다. 배송 안내는 문자로 전송됩니다.</p>
+      <p class="success-product" id="success-product">-</p>
+      <button class="btn btn-secondary" type="button" data-close-modal="success">닫기</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
